@@ -14,6 +14,8 @@ app = Flask(__name__)
 
 app.register_blueprint(student_blueprint)
 
+
+
 cors = CORS(app)
 
 '''
