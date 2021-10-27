@@ -6,7 +6,7 @@ class StudentModel:
 
     def get(self, id):    
         params = {'id' : id}      
-        rv = self.mysql_pool.execute("SELECT id, first_name, last_name, dni, dob, cell_phone, ocupation from student where id=%(id)s", params)                
+        rv = self.mysql_pool.execute("SELECT id, first_name, last_name, dni, dob, cell_phone, ocupation from Student where id=%(id)s", params)                
         data = []
         content = {}
         for result in rv:
@@ -24,7 +24,7 @@ class StudentModel:
         return data
 
     def get_all(self):  
-        rv = self.mysql_pool.execute("SELECT id, first_name, last_name, dni, dob, cell_phone, ocupation from student")  
+        rv = self.mysql_pool.execute("SELECT id, first_name, last_name, dni, dob, cell_phone, ocupation from Student")  
         data = []
         content = {}
         for result in rv:
@@ -50,7 +50,7 @@ class StudentModel:
             'cell_phone' : json['cell_phone'],
             'ocupation' : json['ocupation']
         }  
-        query = """insert into student(first_name, last_name, dni, dob, cell_phone, ocupation)
+        query = """insert into Student(first_name, last_name, dni, dob, cell_phone, ocupation)
             values (%(first_name)s, %(last_name)s,  %(dni)s,  %(dob)s,  %(cell_phone)s,  %(ocupation)s)"""    
         cursor = self.mysql_pool.execute(query, params, commit=True)   
         
@@ -59,7 +59,7 @@ class StudentModel:
 
     def delete(self, id):    
         params = {'id' : id}      
-        query = """delete from student where id = %(id)s"""    
+        query = """delete from Student where id = %(id)s"""    
         self.mysql_pool.execute(query, params, commit=True)   
 
         data = {'result': 1}

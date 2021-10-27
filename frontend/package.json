@@ -26,6 +26,7 @@
     "@fullcalendar/daygrid": "^5.9.0",
     "@fullcalendar/interaction": "^5.9.0",
     "@fullcalendar/vue3": "^5.9.0",
+    "axios": "^0.21.1",
     "core-js": "^3.16.4",
     "vue": "^3.2.6",
     "vue-router": "^4.0.0-0",

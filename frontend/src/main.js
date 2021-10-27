@@ -9,6 +9,9 @@ import { iconsSet as icons } from '@/assets/icons'
 import DocsCallout from '@/components/DocsCallout'
 import DocsExample from '@/components/DocsExample'
 
+//import Vue from 'vue'
+//Vue.prototype.$server_url = 'http://127.0.0.1:5000'
+
 const app = createApp(App)
 app.use(store)
 app.use(router)

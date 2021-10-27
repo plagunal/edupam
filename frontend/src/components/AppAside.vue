@@ -43,28 +43,86 @@
               small
             "
           >
-            Today
+          Students
           </CListGroupItem>
           <CListGroupItem href="#" class="border-start-4 border-start-warning">
-            <CAvatar :src="avatar7" size="lg" class="float-end" />
-            <div>Meeting with <strong>Lucas</strong></div>
+            <CAvatar :src="avatar2" size="lg" class="float-end" />
+            <div>Student 1 <strong>Lucas</strong></div>
             <small class="text-medium-emphasis me-3">
-              <CIcon icon="cil-calendar" /> 1 - 3pm
+              <CIcon icon="cilCheck" /> 1 point
             </small>
             <small class="text-medium-emphasis">
-              <CIcon icon="cil-location-pin" /> Palo Alto, CA
+              <CIcon icon="cilCheckCircle" /> Present
             </small>
           </CListGroupItem>
+
+          <CListGroupItem href="#" class="border-start-4 border-start-info">
+            <CAvatar :src="avatar3" size="lg" class="float-end" />
+            <div>Student 2 <strong>Megan</strong></div>
+            <small class="text-medium-emphasis me-3">
+              <CIcon icon="cilCheck" /> 2 points
+            </small>
+            <small class="text-medium-emphasis">
+              <CIcon icon="cilCheckCircle" /> Present
+            </small>
+          </CListGroupItem>
+
           <CListGroupItem href="#" class="border-start-4 border-start-info">
             <CAvatar :src="avatar4" size="lg" class="float-end" />
-            <div>Skype with <strong>Megan</strong></div>
+            <div>Student 3 <strong>Julia</strong></div>
             <small class="text-medium-emphasis me-3">
-              <CIcon icon="cil-calendar" /> 4 - 5pm
+              <CIcon icon="cilCheck" /> 2 points
             </small>
             <small class="text-medium-emphasis">
-              <CIcon icon="cib-skype" /> On-line
+              <CIcon icon="cilCheckCircle" /> Present
             </small>
           </CListGroupItem>
+
+          <CListGroupItem href="#" class="border-start-4 border-start-info">
+            <CAvatar :src="avatar5" size="lg" class="float-end" />
+            <div>Student 4 <strong>Claudio</strong></div>
+            <small class="text-medium-emphasis me-3">
+              <CIcon icon="cilCheck" /> 4 points
+            </small>
+            <small class="text-medium-emphasis">
+              <CIcon icon="cilCheckCircle" /> Present
+            </small>
+          </CListGroupItem>
+
+          <CListGroupItem href="#" class="border-start-4 border-start-info">
+            <CAvatar :src="avatar6" size="lg" class="float-end" />
+            <div>Student 5 <strong>Joel</strong></div>
+            <small class="text-medium-emphasis me-3">
+              <CIcon icon="cilCheck" /> 2 points
+            </small>
+            <small class="text-medium-emphasis">
+              <CIcon icon="cilCheckCircle" /> Present
+            </small>
+          </CListGroupItem>
+
+          <CListGroupItem href="#" class="border-start-4 border-start-info">
+            <CAvatar :src="avatar7" size="lg" class="float-end" />
+            <div>Student 6 <strong>Vicente</strong></div>
+            <small class="text-medium-emphasis me-3">
+              <CIcon icon="cilCheck" /> 0 points
+            </small>
+            <small class="text-medium-emphasis">
+              <CIcon icon="cilXCircle" /> Absent
+            </small>
+          </CListGroupItem>
+
+          <CListGroupItem href="#" class="border-start-4 border-start-info">
+            <CAvatar :src="avatar8" size="lg" class="float-end" />
+            <div>Student 7 <strong>Enrique</strong></div>
+            <small class="text-medium-emphasis me-3">
+              <CIcon icon="cilCheck" /> 3 points
+            </small>
+            <small class="text-medium-emphasis">
+              <CIcon icon="cilCheckCircle" /> Present
+            </small>
+          </CListGroupItem>
+
+
           <CListGroupItem
             class="
               border-start-4 border-start-secondary
@@ -74,61 +132,9 @@
               text-medium-emphasis text-uppercase
               small
             "
-          >
-            Tomorrow
+          >            
           </CListGroupItem>
-          <CListGroupItem
-            accent="danger"
-            href="#"
-            class="border-start-4 border-start-danger"
-          >
-            <div>New UI Project - <strong>deadline</strong></div>
-            <small class="text-medium-emphasis me-3">
-              <CIcon icon="cil-calendar" /> 10 - 11pm
-            </small>
-            <small class="text-medium-emphasis">
-              <CIcon icon="cil-home" /> creativeLabs HQ
-            </small>
-            <div class="avatars-stack mt-2">
-              <CAvatar :src="avatar2" size="sm" />
-              <CAvatar :src="avatar3" size="sm" />
-              <CAvatar :src="avatar4" size="sm" />
-              <CAvatar :src="avatar5" size="sm" />
-              <CAvatar :src="avatar6" size="sm" />
-            </div>
-          </CListGroupItem>
-          <CListGroupItem href="#" class="border-start-4 border-start-success">
-            <div><strong>#10 Startups.Garden</strong> Meetup</div>
-            <small class="text-medium-emphasis me-3">
-              <CIcon icon="cil-calendar" /> 1 - 3pm
-            </small>
-            <small class="text-medium-emphasis">
-              <CIcon icon="cil-location-pin" /> Palo Alto, CA
-            </small>
-          </CListGroupItem>
-          <CListGroupItem
-            href="#"
-            class="border-start-4 border-start-primary border-bottom"
-          >
-            <div>
-              <strong>Team meeting</strong>
-            </div>
-            <small class="text-medium-emphasis me-3">
-              <CIcon icon="cil-calendar" /> 4 - 6pm
-            </small>
-            <small class="text-medium-emphasis">
-              <CIcon icon="cil-home" /> creativeLabs HQ
-            </small>
-            <div class="/avatars-stack mt-2">
-              <CAvatar :src="avatar2" size="sm" />
-              <CAvatar :src="avatar3" size="sm" />
-              <CAvatar :src="avatar4" size="sm" />
-              <CAvatar :src="avatar5" size="sm" />
-              <CAvatar :src="avatar6" size="sm" />
-              <CAvatar :src="avatar7" size="sm" />
-              <CAvatar :src="avatar8" size="sm" />
-            </div>
-          </CListGroupItem>
+          
         </CListGroup>
       </CTabPane>
       <CTabPane class="p-3" :visible="activeKey == 2">
