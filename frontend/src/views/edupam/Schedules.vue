@@ -5,7 +5,7 @@
 
     <CCol :xs="12">
       <CCard class="mb-4">
-        <CCardHeader> <strong>Cycle type</strong> <small>list</small> </CCardHeader>
+        <CCardHeader> <strong>Schedule</strong> <small>list</small> </CCardHeader>
         <CCardBody>
           
           <CSmartTable
@@ -48,7 +48,7 @@
 
     <CCol :xs="12">      
       <CCard>
-        <CCardHeader> <strong>Cycle type</strong> new/edit </CCardHeader>
+        <CCardHeader> <strong>Schedule</strong> new/edit </CCardHeader>
         <CCardBody>
           <!--<p>
             Cycle details.
@@ -70,7 +70,7 @@
                      
 
                       <CCol xs="12">
-                        <CButton color="primary" type="submit">Create</CButton>
+                        <CButton color="primary" type="submit">Save</CButton>
                       </CCol>
                     </CForm>   
                   
@@ -94,7 +94,7 @@
 
 <script>
 import axios from 'axios'
-
+import global_params from './_params'
 
 export default {
   data: () => {
@@ -131,7 +131,7 @@ export default {
 
         console.log(this.current_item);
         
-        axios.post(this.postURL + '/utils/create_schedule', this.current_item, this.config_request)
+        axios.post(global_params.server + '/utils/create_schedule', this.current_item, this.config_request)
         .then(res => {                                         
             this.items.unshift(res.data);
         })
@@ -142,7 +142,7 @@ export default {
     },
     created(){  
 
-      axios.post(this.postURL + '/utils/get_all_schedules')
+      axios.post(global_params.server + '/utils/get_all_schedules')
             .then((res) => { this.items = res.data; })
             .catch((error) => { console.log(error) });
     }    

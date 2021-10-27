@@ -98,7 +98,7 @@
                       </CCol> 
 
                       <CCol xs="12">
-                        <CButton color="primary" type="submit">Create</CButton>
+                        <CButton color="primary" type="submit">Save</CButton>
                       </CCol>
                     </CForm>   
                   
@@ -110,10 +110,13 @@
             </CTable>
           </div>
         </CCardBody>
-      </CCard>
-
+      </CCard>    
       
     </CCol>
+
+
+
+
   </CRow>
 
 
@@ -122,7 +125,7 @@
 
 <script>
 import axios from 'axios'
-
+import global_params from './_params'
 
 export default {
   data: () => {
@@ -176,7 +179,7 @@ export default {
 
         console.log(this.current_item);
         
-        axios.post(this.postURL + '/cycle/create', this.current_item, this.config_request)
+        axios.post(global_params.server + '/cycle/create', this.current_item, this.config_request)
         .then(res => {                                         
             this.items.unshift(res.data);
         })
@@ -187,15 +190,15 @@ export default {
     },
     created(){ 
     //mounted(){ 
-      axios.post(this.postURL + '/cycle/get_all')
+      axios.post(global_params.server + '/cycle/get_all')
             .then((res) => { this.items = res.data;})
             .catch((error) => { console.log(error) });
 
-      axios.post(this.postURL + '/utils/get_all_schedules')
+      axios.post(global_params.server + '/utils/get_all_schedules')
             .then((res) => { this.schedules = res.data; })
             .catch((error) => { console.log(error) });
 
-      axios.post(this.postURL + '/cycle/get_cycle_type')
+      axios.post(global_params.server + '/cycle/get_cycle_type')
             .then((res) => { this.types = res.data; })
             .catch((error) => { console.log(error) });
     }    

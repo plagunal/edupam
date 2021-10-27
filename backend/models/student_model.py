@@ -35,7 +35,8 @@ class StudentModel:
                     'last_name': result[2], 
                     'dni': result[3], 
                     'code': result[4], 
-                    'dob': result[5].strftime("%Y-%m-%d"),
+                    #'dob': result[5].strftime("%Y-%m-%d"),
+                    'dob': result[5].strftime("%m-%d-%Y"),
                     'cell_phone': result[6], 
                     'ocupation': result[7]
                 }
@@ -48,12 +49,13 @@ class StudentModel:
             'first_name' : json['first_name'],
             'last_name' : json['last_name'],
             'dni' : json['dni'],
+            'code' : json['code'],
             'dob' : json['dob'],
             'cell_phone' : json['cell_phone'],
             'ocupation' : json['ocupation']
         }  
-        query = """insert into Student(first_name, last_name, dni, dob, cell_phone, ocupation)
-            values (%(first_name)s, %(last_name)s,  %(dni)s,  %(dob)s,  %(cell_phone)s,  %(ocupation)s)"""    
+        query = """insert into Student(first_name, last_name, code, dni, dob, cell_phone, ocupation)
+            values (%(first_name)s, %(last_name)s,  %(code)s, %(dni)s,  %(dob)s,  %(cell_phone)s,  %(ocupation)s)"""    
         cursor = self.mysql_pool.execute(query, params, commit=True)   
         
         json["id"] = cursor.lastrowid       

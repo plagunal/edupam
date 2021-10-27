@@ -30,3 +30,4 @@ class UtilsModel:
         
         json["id"] = cursor.lastrowid       
         return json
+    

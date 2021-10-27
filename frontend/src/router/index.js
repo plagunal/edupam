@@ -64,6 +64,16 @@ const routes = [
         component: () => import('@/views/edupam/Students.vue'),
       },
       {
+        path: '/edupam/attendance',
+        name: 'Attendance',
+        component: () => import('@/views/edupam/Attendance.vue'),
+      },
+      {
+        path: '/edupam/participations',
+        name: 'Participations',
+        component: () => import('@/views/edupam/Participations.vue'),
+      },
+      {
         path: '/base',
         name: 'Base',
         component: {

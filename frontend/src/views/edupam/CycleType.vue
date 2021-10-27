@@ -5,7 +5,7 @@
 
     <CCol :xs="12">
       <CCard class="mb-4">
-        <CCardHeader> <strong>Cycle type</strong> <small>list</small> </CCardHeader>
+        <CCardHeader> <strong>Cycle type (levels)</strong> <small>list</small> </CCardHeader>
         <CCardBody>
           
           <CSmartTable
@@ -63,14 +63,14 @@
                   <CForm class="row g-3" @submit="add">
                      
                       <CCol xs="12">
-                        <CFormLabel for="inputCycle">Name</CFormLabel>
+                        <CFormLabel for="inputName">Name</CFormLabel>
                         <CFormInput id="inputName" name="inputName" required/>
                       </CCol>
 
                      
 
                       <CCol xs="12">
-                        <CButton color="primary" type="submit">Create</CButton>
+                        <CButton color="primary" type="submit">Save</CButton>
                       </CCol>
                     </CForm>   
                   
@@ -94,7 +94,7 @@
 
 <script>
 import axios from 'axios'
-
+import global_params from './_params'
 
 export default {
   data: () => {
@@ -123,6 +123,8 @@ export default {
       edit(item){
         this.current_item = item;
         console.log(this.current_item);
+        document.getElementById("inputName").value = this.current_item.name;
+        
       },
       add(event){ 
         event.preventDefault();        
@@ -131,7 +133,7 @@ export default {
 
         console.log(this.current_item);
         
-        axios.post(this.postURL + '/cycle/create_cycle_type', this.current_item, this.config_request)
+        axios.post(global_params.server + '/cycle/create_cycle_type', this.current_item, this.config_request)
         .then(res => {                                         
             this.items.unshift(res.data);
         })
@@ -142,7 +144,7 @@ export default {
     },
     created(){  
 
-      axios.post(this.postURL + '/cycle/get_cycle_type')
+      axios.post(global_params.server + '/cycle/get_cycle_type')
             .then((res) => { this.items = res.data; })
             .catch((error) => { console.log(error) });
     }    
