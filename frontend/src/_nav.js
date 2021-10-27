@@ -55,5 +55,22 @@ export default [
     to: '/edupam/working',
     icon: 'cil-settings',
   },
-  
+  {
+    component: 'CNavGroup',
+    name: 'Base',
+    to: '/base',
+    icon: 'cilBookmark',
+    items: [
+      {
+        component: 'CNavItem',
+        name: 'Cycle types',
+        to: '/edupam/cycle_type'
+      },
+      {
+        component: 'CNavItem',
+        name: 'Schedules',
+        to: '/edupam/schedules'
+      }
+    ],
+  },
 ]

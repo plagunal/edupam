@@ -62,30 +62,11 @@
 
                   <CForm class="row g-3" @submit="add">
                      
-                      <CCol md="6">
-                        <CFormLabel for="inputFirstName">First Name</CFormLabel>
-                        <CFormInput id="inputFirstName" name="inputFirstName" required/>
+                      <CCol xs="12">
+                        <CFormLabel for="inputCycle">Name</CFormLabel>
+                        <CFormInput id="inputName" name="inputName" required/>
                       </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputLastName">Last Name</CFormLabel>
-                        <CFormInput id="inputLastName" name="inputLastName" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputCode">Code</CFormLabel>
-                        <CFormInput id="inputCode" name="inputCode" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputCellPhone">Cell phone</CFormLabel>
-                        <CFormInput id="inputCellPhone" name="inputCellPhone" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputDob">Date of Birth</CFormLabel>
-                        <CFormInput type="date" id="inputDob" name="inputDob" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputOcupation">Ocupation</CFormLabel>
-                        <CFormInput id="inputOcupation" name="inputOcupation" required/>
-                      </CCol>
+
                      
 
                       <CCol xs="12">
@@ -126,10 +107,10 @@ export default {
             filter: false,
             sorter: false,
             _props: { color: 'primary', className: 'fw-semibold'}
-          }, 'code', 'first_name', 'last_name', 'dob', 'ocupation'
+          }, 'name'
         ],
         details: [],
-        items: [{id:null, first_name:null, last_name:null, dob:null, ocupation:null}],        
+        items: [{id:null, name:null}],        
         current_item: {},        
         postURL: 'http://127.0.0.1:5000',
         config_request: {
@@ -150,7 +131,7 @@ export default {
 
         console.log(this.current_item);
         
-        axios.post(this.postURL + '/student/create', this.current_item, this.config_request)
+        axios.post(this.postURL + '/cycle/create_cycle_type', this.current_item, this.config_request)
         .then(res => {                                         
             this.items.unshift(res.data);
         })
@@ -161,7 +142,7 @@ export default {
     },
     created(){  
 
-      axios.post(this.postURL + '/student/get_all')
+      axios.post(this.postURL + '/cycle/get_cycle_type')
             .then((res) => { this.items = res.data; })
             .catch((error) => { console.log(error) });
     }    

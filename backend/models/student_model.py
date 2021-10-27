@@ -1,4 +1,5 @@
 from backend.models.connection_pool import MySQLPool
+import datetime
 
 class StudentModel:
     def __init__(self):        
@@ -24,7 +25,7 @@ class StudentModel:
         return data
 
     def get_all(self):  
-        rv = self.mysql_pool.execute("SELECT id, first_name, last_name, dni, dob, cell_phone, ocupation from Student")  
+        rv = self.mysql_pool.execute("SELECT id, first_name, last_name, dni, code, dob, cell_phone, ocupation from Student")  
         data = []
         content = {}
         for result in rv:
@@ -33,9 +34,10 @@ class StudentModel:
                     'first_name': result[1],
                     'last_name': result[2], 
                     'dni': result[3], 
-                    'dob': result[4], 
-                    'cell_phone': result[5], 
-                    'ocupation': result[6]
+                    'code': result[4], 
+                    'dob': result[5].strftime("%Y-%m-%d"),
+                    'cell_phone': result[6], 
+                    'ocupation': result[7]
                 }
             data.append(content)
             content = {}

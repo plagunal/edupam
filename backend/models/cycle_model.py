@@ -61,7 +61,9 @@ class CycleModel:
         for result in rv:
             content = {
                     'value': int(result[0]), 
-                    'text': result[1]                     
+                    'text': result[1],
+                    'id': int(result[0]), 
+                    'name': result[1]                     
                 }
             data.append(content)
             content = {}
@@ -77,6 +79,17 @@ class CycleModel:
         }  
         query = """insert into Cycle(name, date, id_type, id_schedule, active)
             values (%(name)s, %(c_date)s,  %(type)s,  %(schedule)s,  %(active_val)s)"""    
+        cursor = self.mysql_pool.execute(query, params, commit=True)   
+        
+        json["id"] = cursor.lastrowid       
+        return json
+    
+    def create_cycle_type(self, json):    
+        params = {
+            'name' : json['name']
+        }  
+        query = """insert into Cycle_type(name)
+            values (%(name)s)"""    
         cursor = self.mysql_pool.execute(query, params, commit=True)   
         
         json["id"] = cursor.lastrowid       

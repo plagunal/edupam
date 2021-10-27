@@ -191,7 +191,7 @@ export default {
             .then((res) => { this.items = res.data;})
             .catch((error) => { console.log(error) });
 
-      axios.post(this.postURL + '/utils/get_all_schedule')
+      axios.post(this.postURL + '/utils/get_all_schedules')
             .then((res) => { this.schedules = res.data; })
             .catch((error) => { console.log(error) });
 

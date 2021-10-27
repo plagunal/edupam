@@ -17,6 +17,12 @@ def create():
     content = model.create(request.json)    
     return jsonify(content)
 
+@cycle_blueprint.route('/cycle/create_cycle_type', methods=['POST'])
+@cross_origin()
+def create_cycle_type():
+    content = model.create_cycle_type(request.json)    
+    return jsonify(content)
+
 @cycle_blueprint.route('/cycle/delete', methods=['POST'])
 @cross_origin()
 def delete():

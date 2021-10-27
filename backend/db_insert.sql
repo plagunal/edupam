@@ -1,6 +1,7 @@
 delete from Cycle;
 delete from Schedule;
 delete from Cycle_type;
+delete from Student;
 
 INSERT INTO Schedule(id, name) VALUES (1, 'Sabados 13:00-19:15');
 INSERT INTO Schedule(id, name) VALUES (2, 'Regular 7:15-8:45');
@@ -43,3 +44,11 @@ INSERT INTO Cycle(id, name, id_schedule, id_type, active, date) VALUES (6, 'Octu
 INSERT INTO Cycle(id, name, id_schedule, id_type, active, date) VALUES (7, 'Octubre', 4, 7, 1, '2021-10-02');
 INSERT INTO Cycle(id, name, id_schedule, id_type, active, date) VALUES (8, 'Octubre', 5, 8, 1, '2021-10-02');
 INSERT INTO Cycle(id, name, id_schedule, id_type, active, date) VALUES (9, 'Junio', 5, 8, 0, '2021-10-02');
+
+
+INSERT INTO Student(id, first_name, last_name, code, dob, ocupation) 
+VALUES (1, 'Ronny', 'Coleman', '01245', '2000-01-01', 'Student');
+INSERT INTO Student(id, first_name, last_name, code, dob, ocupation) 
+VALUES (2, 'Buky', 'Garay', '01245', '2000-01-01', 'Ing.');
+INSERT INTO Student(id, first_name, last_name, code, dob, ocupation) 
+VALUES (3, 'Walter', 'Mamani', '01245', '2000-01-01', 'PhD');
