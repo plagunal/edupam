@@ -46,69 +46,6 @@
     </CCol>
 
 
-    <CCol :xs="12">      
-      <CCard>
-        <CCardHeader> <strong>Student</strong> new/edit </CCardHeader>
-        <CCardBody>
-          <!--<p>
-            Cycle details.
-          </p>-->
-          <div class="bd-example bd-example-type">
-            <CTable>
-              <CTableBody>
-                <CTableRow>
-                  <CTableDataCell>
-
-
-                  <CForm class="row g-3" @submit="add">
-                     
-                      <CCol md="6">
-                        <CFormLabel for="inputFirstName">First Name</CFormLabel>
-                        <CFormInput id="inputFirstName" name="inputFirstName" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputLastName">Last Name</CFormLabel>
-                        <CFormInput id="inputLastName" name="inputLastName" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputCode">Student Code</CFormLabel>
-                        <CFormInput id="inputCode" name="inputCode" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputDNI">DNI</CFormLabel>
-                        <CFormInput id="inputDNI" name="inputDNI" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputCellPhone">Cell phone</CFormLabel>
-                        <CFormInput id="inputCellPhone" name="inputCellPhone" required/>
-                      </CCol>
-                      <CCol md="6">
-                        <CFormLabel for="inputDob">Date of Birth</CFormLabel>
-                        <CFormInput type="date" id="inputDob" name="inputDob" required/>
-                      </CCol>
-                      <CCol md="12">
-                        <CFormLabel for="inputOcupation">Ocupation</CFormLabel>
-                        <CFormInput id="inputOcupation" name="inputOcupation" required/>
-                      </CCol>
-                     
-
-                      <CCol xs="12">
-                        <CButton color="primary" type="submit">Create</CButton>
-                      </CCol>
-                    </CForm>   
-                  
-                  </CTableDataCell>
-                </CTableRow>
-                
-                
-              </CTableBody>
-            </CTable>
-          </div>
-        </CCardBody>
-      </CCard>
-
-      
-    </CCol>
   </CRow>
 
 
