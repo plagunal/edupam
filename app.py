@@ -8,7 +8,7 @@ from backend.controllers.student_blueprint import student_blueprint
 from backend.controllers.utils_blueprint import utils_blueprint
 from backend.controllers.cycle_blueprint import cycle_blueprint
 from backend.controllers.attendance_blueprint import attendance_blueprint
-
+from backend.controllers.teacher_blueprint import teacher_blueprint
 app = Flask(__name__)
 # para que utilice vue compilado ( npm run build ). En la carpeta dist, esta lo compilado de vue
 #app = Flask(__name__,
@@ -19,7 +19,7 @@ app.register_blueprint(student_blueprint)
 app.register_blueprint(utils_blueprint)
 app.register_blueprint(cycle_blueprint)
 app.register_blueprint(attendance_blueprint)
-
+app.register_blueprint(teacher_blueprint)
 cors = CORS(app)
 
 '''
